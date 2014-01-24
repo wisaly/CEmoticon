@@ -1,0 +1,43 @@
+#if defined(UNDER_CE)
+#include <winbase.h>
+#else
+#include <winver.h>
+#endif
+
+// Icon
+IDI_ICON1 ICON DISCARDABLE "res/app.ico"
+
+// Version
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 0,0,0,1
+ PRODUCTVERSION 0,0,0,1
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "080403a8"
+        BEGIN
+            VALUE "CompanyName", "wisaly@gmail.com"
+            VALUE "FileDescription", "Emoticons input method for windows."
+            VALUE "FileVersion", "0.0.0.1"
+            VALUE "InternalName", "CEmoticons.exe"
+            VALUE "LegalCopyright", "wisaly@gmail.com"
+            VALUE "OriginalFilename", "CEmoticons.exe"
+            VALUE "ProductName", "CEmoticons"
+            VALUE "ProductVersion", "0.0.0.1"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x804, 936
+    END
+END
