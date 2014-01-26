@@ -22,7 +22,11 @@ SOURCES += main.cpp\
     acckey/acckeynotifier.cpp \
     common/singleapplication.cpp \
     config/appconfig.cpp \
-    config/emoconfig.cpp
+    config/emoconfig.cpp \
+    cetabctrl/cetabctrl.cpp \
+    cetabctrl/cepaintunit.cpp \
+    cetabctrl/cetabitem.cpp \
+    cetabctrl/cetabpage.cpp
 
 HEADERS  += common/common.h \
     common/singleapplication.h \
@@ -34,9 +38,14 @@ HEADERS  += common/common.h \
     acckey/acckeythread.h \
     acckey/acckeynotifier.h \
     config/appconfig.h \
-    config/emoconfig.h
+    config/emoconfig.h \
+    cetabctrl/cetabctrl.h \
+    cetabctrl/cepaintunit.h \
+    cetabctrl/cetabitem.h \
+    cetabctrl/cetabpage.h
 
-FORMS    += dlgconfig.ui
+FORMS    += dlgconfig.ui \
+    cetabctrl/cetabctrl.ui
 
 OTHER_FILES += \
     winrc.rc \
@@ -52,3 +61,6 @@ win32 {
        # TODO: Unices
     }
 }
+
+
+include(qxt/qxtglobalshortcut.pri)

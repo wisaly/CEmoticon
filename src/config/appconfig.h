@@ -7,6 +7,7 @@
 
 class AppConfig
 {
+public:
     QString configFilePath;
     struct ConfigWindow
     {
