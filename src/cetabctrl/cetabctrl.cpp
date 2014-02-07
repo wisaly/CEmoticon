@@ -1,6 +1,6 @@
 #include "cetabctrl.h"
-
-#include <config/appconfig.h>
+#include "config/appconfig.h"
+#include <QResizeEvent>
 
 CETabCtrl::CETabCtrl(QWidget *parent) :
     QWidget(parent)
@@ -84,31 +84,33 @@ void CETabCtrl::activePage(CETabPage *page)
 
 void CETabCtrl::reloadSetting()
 {
-//    m_columnCount = AppConfig::inst()->PopWindow.PageItem.ColumnCount;
-//    m_rowCount = AppConfig::inst()->PopWindow.PageItem.RowCount;
+    m_columnCount = AppConfig::inst()->popWindow.pageItem.columnCount;
+    m_rowCount = AppConfig::inst()->popWindow.pageItem.rowCount;
 
-//    m_lstPageBackgrounds.RemoveAll();
+    m_pageBackgroundColors.clear();
 
-//    for (POSITION pos = CConfigManager::Inst()->PopWindow.Pages.Colors.GetHeadPosition();
-//        pos != NULL;)
-//    {
-//        m_lstPageBackgrounds.AddTail(CConfigManager::Inst()->PopWindow.Pages.Colors.GetNext(pos));
-//    }
+    for (int i = 0;i < AppConfig::inst()->popWindow.pages.colors.count();i++)
+    {
+        m_pageBackgroundColors.append(AppConfig::inst()->popWindow.pages.colors[i]);
+    }
 }
 
 QRect CETabCtrl::pageRect()
 {
-
+    return m_unitRect.adjusted(m_ctrlPadding,m_ctrlPadding,m_ctrlPadding,m_ctrlPadding);
 }
 
 void CETabCtrl::resizeEvent(QResizeEvent *event)
 {
+    m_unitRect.setRect(0,0,event->size().width(),event->size().height());
 
+    // update children rect
+    moveRect(pageRect());
 }
 
 void CETabCtrl::paintEvent(QPaintEvent *event)
 {
-    /*// double cache
+    // double cache
     QPixmap cache(event->rect().size());
     QPainter painter(&cache);
     painter.translate(-event->rect().x(),-event->rect().y());
@@ -125,25 +127,32 @@ void CETabCtrl::paintEvent(QPaintEvent *event)
 
     // draw to screen
     QPainter realPainter(this);
-    realPainter.drawPixmap(0,0,cache);*/
+    realPainter.drawPixmap(0,0,cache);
 }
 
 void CETabCtrl::mousePressEvent(QMouseEvent *event)
 {
-
-}
-
-void CETabCtrl::mouseMoveEvent(QMouseEvent *event)
-{
-
-}
-
-void CETabCtrl::mouseDoubleClickEvent(QMouseEvent *event)
-{
-
+    Q_UNUSED(event);
 }
 
 void CETabCtrl::mouseReleaseEvent(QMouseEvent *event)
 {
-
+    CEPaintUnit *hit = hitTest(event->pos(),LBTNUP);
+    if (hit != 0)
+    {
+        CETabPage *page = dynamic_cast<CETabPage*>(hit);
+        if (page != 0)
+        {
+            activePage(page);
+        }
+        CETabItem *item = dynamic_cast<CETabItem*>(hit);
+        if (item != 0)
+        {
+            if (CEPaintUnit::parent() != 0)
+            {
+                //GetParent()->SendMessage(MSG_HITITEM,(WPARAM)(LPCTSTR)pItem->strContent,0);
+                emit hitItem(item->content,item->note);
+            }
+        }
+    }
 }

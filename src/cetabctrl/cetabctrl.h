@@ -10,6 +10,9 @@ class CETabCtrl : public QWidget,public CEPaintUnit
 {
     Q_OBJECT
 
+signals:
+    void hitItem(QString content,QString note);
+
 public:
     explicit CETabCtrl(QWidget *parent = 0);
     ~CETabCtrl();
@@ -51,8 +54,8 @@ public:
     void resizeEvent(QResizeEvent * event);
     void paintEvent(QPaintEvent * event);
     void mousePressEvent(QMouseEvent * event);
-    void mouseMoveEvent(QMouseEvent * event);
-    void mouseDoubleClickEvent(QMouseEvent * event);
+    //void mouseMoveEvent(QMouseEvent * event);
+    //void mouseDoubleClickEvent(QMouseEvent * event);
     void mouseReleaseEvent(QMouseEvent * event);
 };
 

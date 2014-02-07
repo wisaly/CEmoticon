@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<emoji>
+        <infoos>
+                <info>Example</info>
+                <info>https://x.xml</info>
+        </infoos>
+        <category name="常">
+        <entry><string>ﾍ(￣ω￣ﾍ)</string></entry>
+        <entry><string>(((o(*ﾟ▽ﾟ*)o)))</string></entry>
+        <entry><string>'_&gt;`</string></entry>
+        <entry><string>,,Ծ‸Ծ,,﻿</string></entry>
+        <entry><string>ლ(╹◡╹ლ)﻿</string></entry>
+        <entry><string>_(:3」∠)_</string></entry>
+        <entry><string>（｀・ω・´）</string></entry>
+        <entry><string>(ﾟ々。）</string></entry>
+        <entry><string>(*´ω｀*)</string></entry>
+        <entry><string>(๑• . •๑) ﻿</string></entry>
+        </category><category name="w">
+        <entry><string>(○’ω’○)</string></entry>
+        <entry><string>(✪ω✪)﻿</string></entry>
+        <entry><string>(ノ￣ω￣)ノ</string></entry>
+        <entry><string>ヘ(￣ω￣ヘ)</string></entry>
+        <entry><string>ヽ(｡ゝω・｡)ﾉ</string></entry>
+        <entry><string>ヽ(･ω･ゞ)</string></entry>
+        <entry><string>(ﾉ･ω･)ﾉﾞ</string></entry>
+        <entry><string>ヽ(･ω･｡)ﾉ</string></entry>
+        <entry><string>ヾ(ｏ･ω･)ﾉ</string></entry>
+        <entry><string>(* &gt;ω&lt;)</string></entry>
+        <entry><string>┗(･ω･;)┛</string></entry>
+        <entry><string>(*-ω-)</string></entry>
+        <entry><string>(*･ω･)</string></entry>
+        <entry><string>(´-ω-｀)</string></entry>
+        <entry><string>ヾ(｡･ω･｡)</string></entry>
+        </category>
+        <category name="喜">
+        <entry><string>(o・ω・)♪ </string></entry>
+        </category>
+        <category name="悲">
+        <entry><string>(´Ａ｀。)</string></entry>
+        <entry><string>(´；д；`)</string></entry>
+        <entry><string>(ﾉ∇･､)</string></entry>
+        <entry><string>(｡´Д⊂)</string></entry>
+        <entry><string>(´∩｀。)</string></entry>
+        </category><category name="惊">
+        <entry><string>(,,#ﾟДﾟ)</string></entry>
+        <entry><string>(•ิ_•ิ)?</string></entry>
+        <entry><string>o(-`д´- ｡)</string></entry>
+        <entry><string>(/ﾟДﾟ)/</string></entry>
+        <entry><string>ヽ(#`Д´)ﾉ</string></entry>
+        <entry><string>（＞д＜）</string></entry>
+        </category>
+</emoji>

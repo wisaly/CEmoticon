@@ -4,7 +4,7 @@
 #include <QColor>
 #include <QPainter>
 
-class CEPaintUnit : public QObject
+class CEPaintUnit// : public QObject
 {
 public:
     explicit CEPaintUnit(CEPaintUnit *parent = 0,QRect rect = QRect());

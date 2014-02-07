@@ -5,7 +5,7 @@
 
 AppConfig::AppConfig()
 {
-    configFilePath = QApplication::applicationDirPath() + "\\"
+    configFilePath = QApplication::applicationDirPath() + "/"
             + APP_CONFIG_FILE;
 }
 

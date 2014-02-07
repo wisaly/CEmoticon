@@ -49,7 +49,8 @@ FORMS    += dlgconfig.ui \
 
 OTHER_FILES += \
     winrc.rc \
-    AppConfig.xml
+    AppConfig.xml \
+    ExampleEmo.xml
 
 win32: RC_FILE = winrc.rc
 
