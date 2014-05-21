@@ -20,18 +20,18 @@ public:
 
     XmlNodesPtr operator = (XmlNodesPtr pNodes);
     XmlNodes & operator = (XmlNodes & refNodes);
-	//! @see getItem()
+    //! @see item()
     XmlNodePtr operator[] ( int index );
-	//! @see getItem()
+    //! @see item()
     XmlNodePtr operator[] ( QString name );
 
 	//! 获取数量
-	int getCount(void); 
+    int count(void);
 
 	// 按索引获节点项
-    XmlNodePtr getItem( int index );
+    XmlNodePtr item( int index );
 	// 按名字获取节点项
-    XmlNodePtr getItem( QString name );
+    XmlNodePtr item( QString name );
 
 protected: 
     XmlNodes(QDomNodeList nodeList);

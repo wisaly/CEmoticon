@@ -32,7 +32,7 @@ XmlNodes & XmlNodes::operator=( XmlNodes & refNodes )
 	return (*this); 
 }
 
-int XmlNodes::getCount( void )
+int XmlNodes::count( void )
 {
 	int nCount = 0; 
 	QDomNode node; 
@@ -50,9 +50,9 @@ int XmlNodes::getCount( void )
 	return nCount;
 }
 
-XmlNodePtr XmlNodes::getItem(int index )
+XmlNodePtr XmlNodes::item(int index )
 {
-    Q_ASSERT( index >= 0 && index < getCount() );
+    Q_ASSERT( index >= 0 && index < count() );
 
 	int nCount = 0;
 
@@ -79,7 +79,7 @@ XmlNodePtr XmlNodes::getItem(int index )
 	return pNode; 
 }
 
-XmlNodePtr XmlNodes::getItem(QString name )
+XmlNodePtr XmlNodes::item(QString name )
 {
     Q_ASSERT( name != "" );
 
@@ -103,10 +103,10 @@ XmlNodePtr XmlNodes::getItem(QString name )
 }
 XmlNodePtr XmlNodes::operator[]( int index )
 {
-    return getItem(index);
+    return item(index);
 }
 
 XmlNodePtr XmlNodes::operator[]( QString name )
 {
-    return getItem(name);
+    return item(name);
 }

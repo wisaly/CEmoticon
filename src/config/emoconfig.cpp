@@ -2,15 +2,28 @@
 
 #include <xml/xml.h>
 
-EmoConfig::EmoConfig(QString file)
+EmoConfig::EmoConfig(QString localPath,QString remotePath)
 {
-    configFilePath = file;
+    this->localPath = localPath;
+    this->remotePath = remotePath;
+
+    download();
+    load();
+}
+
+bool EmoConfig::download()
+{
+    if(!remotePath.isEmpty())
+    {
+    }
+
+    return true;
 }
 
 bool EmoConfig::load()
 {
     Xml xml;
-    if (!xml.open(configFilePath))
+    if (!xml.open(localPath))
     {
         if(!save())
         {
@@ -21,19 +34,19 @@ bool EmoConfig::load()
 
     XmlNodePtr pRoot = xml.getRoot();
     XmlNodesPtr pInfoos = pRoot->getChild("infoos")->getChildren();
-    for (int i = 0;i < pInfoos->getCount();i++)
+    for (int i = 0;i < pInfoos->count();i++)
     {
         this->infoos.info.append((*pInfoos)[i]->getString());
     }
     
-    for (XmlNodePtr pCategory = pRoot->getChild("Category");
-         pCategory = pCategory->getNextSibling("Category");
+    for (XmlNodePtr pCategory = pRoot->getChild("category");
+         pCategory = pCategory->getNextSibling("category");
          pCategory->isNull())
     {
         Category category;
         category.name = pCategory->getAttribute("name");
         XmlNodesPtr pEntries = pCategory->getChildren();
-        for (int i = 0;i < pEntries->getCount();i++)
+        for (int i = 0;i < pEntries->count();i++)
         {
             Category::Entry entry;
             entry.string = (*pEntries)[i]->getChild("string")->getString();
@@ -50,9 +63,9 @@ bool EmoConfig::load()
 bool EmoConfig::save()
 {
     Xml xml;
-    if (!xml.open(configFilePath))
+    if (!xml.open(localPath))
     {
-        if (xml.create(configFilePath,"emoji"))
+        if (xml.create(localPath,"emoji"))
         {
             return false;
         }

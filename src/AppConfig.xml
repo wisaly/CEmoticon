@@ -1,24 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <CEConfig>
-        <ConfigWindow PopAtStart="false"/>
-        <AccerateKey PopSelect="Ctrl+E"/>
-        <PopWindow CtrlPadding="5" FontSize="100" FontName="微软雅黑" Width="340" Height="304">
+    <ConfigWindow PopAtStart="false"/>
+    <AccerateKey PopSelect="Ctrl+E"/>
+    <PopWindow CtrlPadding="5" FontSize="100" FontName="微软雅黑" Width="340" Height="304">
         <PageHeader HeaderHeight="40" HeaderHorzMargin="5" HeaderTopMargin="5" HeaderActiveHorzMargin="5" HeaderActiveTopMargin="0" PagePadding="2"/>
         <Pages>
-        <Colors>
-        <Color rgb="44,143,197"/>
-        <Color rgb="216,80,83"/>
-        <Color rgb="253,105,43"/>
-        <Color rgb="152,248,192"/>
-        <Color rgb="223,141,235"/>
-        </Colors>
+            <Colors>
+                <Color rgb="44,143,197"/>
+                <Color rgb="216,80,83"/>
+                <Color rgb="253,105,43"/>
+                <Color rgb="152,248,192"/>
+                <Color rgb="223,141,235"/>
+            </Colors>
         </Pages>
         <PageItem ItemPadding="5" ColumnCount="3" RowCount="5">
-        <Colors Background="255,255,255"/>
-        <Colors Foreground="0,0,0"/>
-        <Colors Hightlight="0,0,0"/>
-        <Colors Checked="0,0,0"/>
-        <Colors Disabled="0,0,0"/>
+            <Colors Background="255,255,255"/>
+            <Colors Foreground="0,0,0"/>
+            <Colors Hightlight="0,0,0"/>
+            <Colors Checked="0,0,0"/>
+            <Colors Disabled="0,0,0"/>
         </PageItem>
-        </PopWindow>
-</WEConfig>
+    </PopWindow>
+    <Sources>
+        <File Active="true" LocalPath="ExampleEmo.xml"/>
+    </Sources>
+</CEConfig>

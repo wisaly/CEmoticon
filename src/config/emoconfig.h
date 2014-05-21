@@ -6,7 +6,8 @@
 
 class EmoConfig
 {
-    QString configFilePath;
+    QString localPath;
+    QString remotePath;
     struct Infoos
     {
         QStringList info;
@@ -25,8 +26,9 @@ class EmoConfig
 
     bool isModifying;
 public:
-    EmoConfig(QString file);
+    EmoConfig(QString localPath,QString remotePath);
 
+    bool download();
     bool load();
     bool save();
 };

@@ -58,7 +58,7 @@ bool AppConfig::load()
     XmlNodePtr pPages = pPopWindow->getChild("Pages");
     this->popWindow.pages.colors.clear();
     XmlNodesPtr pColors = pPages->getChild("Colors")->getChildren();
-    for (int i = 0;i < pColors->getCount();i ++)
+    for (int i = 0;i < pColors->count();i ++)
     {
         this->popWindow.pages.colors.append((*pColors)[i]->getAttribute("rgb",QColor()));
     }
@@ -72,6 +72,22 @@ bool AppConfig::load()
     this->popWindow.pageItem.colors.hightlight = pPageItem->getChild("Colors")->getAttribute("Hightlight",QColor());
     this->popWindow.pageItem.colors.checked = pPageItem->getChild("Colors")->getAttribute("Checked",QColor());
     this->popWindow.pageItem.colors.disabled = pPageItem->getChild("Colors")->getAttribute("Disabled",QColor());
+
+    // Sources
+    XmlNodesPtr pSources = pRoot->getChild("Sources")->getChildren();
+    this->sources.active = 0;
+    this->sources.files.clear();
+    for (int i = 0;i < pSources->count();i ++)
+    {
+        XmlNodePtr pFile = (*pSources)[i];
+        this->sources.files.append(
+                    EmoConfig(pFile->getAttribute("LocalPath"),
+                              pFile->getAttribute("RemotePath")));
+        if (this->sources.active == 0 && pFile->getAttribute("Active",false))
+        {
+            this->sources.active = &this->sources.files.last();
+        }
+    }
 
     return true;
 }

@@ -1,6 +1,8 @@
 #ifndef APPCONFIG_H
 #define APPCONFIG_H
 
+#include "emoconfig.h"
+
 #include <QString>
 #include <QList>
 #include <QColor>
@@ -52,6 +54,13 @@ public:
             }colors;
         }pageItem;
     }popWindow;
+
+    struct Sources
+    {
+        EmoConfig *active;
+        QList<EmoConfig> files;
+    }sources;
+
     bool isModifying;
 private:
     AppConfig();
